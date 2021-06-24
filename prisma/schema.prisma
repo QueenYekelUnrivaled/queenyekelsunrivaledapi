@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Subscriber {
+    id        Int      @id @default(autoincrement())
+    email     String   @unique @db.VarChar(255)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map(name: "subscriber")
+}
+
+enum Gender {
+    male
+    female
+}
+
+enum Level {
+    level_1
+    level_2
+    level_3
+}
+
+enum Binary {
+    yes
+    no
+}
+
+model Registration {
+    id                      Int      @id @default(autoincrement())
+    name_of_child           String   @db.VarChar(255)
+    number_of_siblings      Int      @default(0)
+    age                     String   @db.VarChar(255)
+    date_of_birth           DateTime
+    gender                  Gender
+    level                   Level
+    name_of_parent          String?  @db.VarChar(255)
+    name_of_guardian        String?  @db.VarChar(255)
+    address                 String   @db.VarChar(255)
+    contact                 String   @db.VarChar(255)
+    is_sms                  Binary
+    child_medical_condition String?  @db.Text
+    allegies                String?  @db.Text
+    signature               String   @db.VarChar(255)
+    createdAt               DateTime @default(now())
+    updatedAt               DateTime @updatedAt
+
+    @@map(name: "registration")
+}

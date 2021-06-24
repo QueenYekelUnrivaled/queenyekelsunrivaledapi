@@ -28,7 +28,12 @@ module.exports = {
     },
 
     requestRegistration: async (req, res) => {
-        const register = await prisma.registration.create({ data: req.body });
+        const data = req.body;
+        data['number_of_siblings'] = parseInt(data['number_of_siblings']);
+        data['date_of_birth'] = new Date(data['date_of_birth']).toISOString();
+        if (!data['number_of_siblings']) data['number_of_siblings'] = 0;
+
+        const register = await prisma.registration.create({ data: data });
 
         if (!register) return res.status(422).json({ data: { errors: 'Error occured while sending request' } });
         res.status(200).json({ data: { message: 'request successfully sent' } });

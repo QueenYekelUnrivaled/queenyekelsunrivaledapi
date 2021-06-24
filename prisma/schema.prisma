@@ -38,7 +38,7 @@ enum Binary {
 model Registration {
     id                      Int      @id @default(autoincrement())
     name_of_child           String   @db.VarChar(255)
-    number_of_siblings      Int      @default(0)
+    number_of_siblings      Int      @default(value: 0)
     age                     String   @db.VarChar(255)
     date_of_birth           DateTime
     gender                  Gender

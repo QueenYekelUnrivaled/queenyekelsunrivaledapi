@@ -5,6 +5,8 @@ const morgan = require('morgan');
 
 const app = express();
 
+// middlewares
+app.use(express.static('public'));
 app.use(
     bodyParser.json({
         limit: '30mb',

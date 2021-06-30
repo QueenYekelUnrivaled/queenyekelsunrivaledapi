@@ -1,0 +1,144 @@
+@import "../utils/colors"
+
+header.queen-header
+    width: 100%
+    height: fit-content
+
+    .__sub-header-container
+        background-color: $red
+        color: $white
+        font-size: pxToRem(12px)
+        padding: 8px pxToRem(20px)
+        height: fit-content
+
+        @include breakpoint($breakpoint-small-screen-laptop, true)
+            padding: 8px pxToRem(210px)
+
+        @include breakpoint($breakpoint-mini-desktop, false)
+            padding-top: 5px
+            padding-bottom: 5px
+            font-size: pxToRem(10px)
+
+            .info
+                flex-wrap: wrap
+
+                div
+                    &:first-child
+                        margin-right: 20px !important
+
+            svg
+                width: pxToRem(12px)
+
+        @include breakpoint($breakpoint-tablet, false)
+            padding-top: 5px
+            padding-bottom: 5px
+
+    .__header-container
+        background-color: $white
+        color: $dark
+        padding: 8px pxToRem(20px)
+        height: fit-content
+
+        img.logo
+            width: pxToRem(55px)
+            height: pxToRem(55px)
+            object-fit: contain
+
+        @include breakpoint($breakpoint-small-screen-laptop, true)
+            padding: 8px pxToRem(210px)
+
+        @include breakpoint($breakpoint-mini-desktop, false)
+            padding-top: 5px
+            padding-bottom: 5px
+            font-size: pxToRem(10px)
+
+            img.logo
+                width: pxToRem(45px)
+                height: pxToRem(45px)
+
+            .btn
+                a
+                    span
+                        font-size: pxToRem(13px)
+
+                &.enroll-now
+                    a
+                        padding: 9px 20px
+
+        nav.mobile-view
+            svg
+                cursor: pointer
+
+            ul
+                background-color: $dark
+                position: absolute
+                left: 0
+                top: pxToRem(81px)
+                width: 100%
+                flex-wrap: wrap
+                padding: 10px 50px 50px
+
+                @include breakpoint($breakpoint-tablet, false)
+                    padding: 10px 20px 20px
+
+                @include breakpoint(439px, false)
+                    top: pxToRem(96px)
+
+                @include breakpoint(321px, false)
+                    top: pxToRem(110px)
+
+                @include breakpoint(288px, false)
+                    top: pxToRem(122px)
+
+                @include breakpoint(267px, false)
+                    top: pxToRem(132px)
+
+                .btn
+
+                    a
+                        padding: 7px 7px 7px 20px
+                        border-radius: 50px
+                        display: block
+                        margin-bottom: 5px
+
+                        span
+                            width: 100%
+                            color: $white
+                            font-size: pxToRem(15px)
+
+                        &:hover
+                            background-color: lighten(gray, 45%)
+                            span
+                                color: $dark
+
+                    &.enroll-now
+                        a
+                            &:hover
+                                background-color: $light-red
+
+                                span
+                                    color: $white
+
+        nav.nav-bar
+            &.mobile-view
+                display: none
+
+                ul
+                    height: 0
+                    padding-bottom: 0
+                    padding-top: 0
+                    overflow: hidden
+
+            @include breakpoint($breakpoint-tablet, false)
+                &.web-view
+                    display: none
+
+                &.mobile-view
+                    display: block
+
+                    ul.is-active
+                        height: pxToRem(331px)
+                        padding-bottom: 50px
+                        padding-top: 10px
+                        z-index: 2
+                        overflow: hidden

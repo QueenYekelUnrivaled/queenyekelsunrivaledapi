@@ -1,0 +1,66 @@
+@import "./colors"
+
+.btn
+    a
+        padding: 10px 40px
+        background-color: $red
+        border-radius: 5px
+
+        span
+            font-family: $concert-one
+            font-size: pxToRem(18px)
+            display: inline-block
+            color: $white
+            text-transform: capitalize
+
+            &:hover
+                background-color: $light-red
+
+    &.btn-link
+        a
+            padding: 27px 4px
+            background: none
+
+            span
+                color: $u-primary
+                pointer-events: none
+
+            &:hover
+                span
+                    color: $light-red
+
+    &.circle
+        a
+            border-radius: 50px
+
+    &.enroll-now
+        a
+            padding: 12px 30px
+            background-color: $red
+
+            span
+                pointer-events: none
+                border-radius: 50px
+                color: $white
+
+            &:hover
+                background-color: $light-red
+                span
+                    color: $white
+
+button.btn
+    border: none
+    padding: 15px 40px
+    background-color: $red
+    border-radius: 5px
+    cursor: pointer
+
+    span
+        text-transform: capitalize
+        font-family: $concert-one
+        font-size: pxToRem(18px)
+        display: inline-block
+        color: $white
+
+    &:hover
+        background-color: darken($red, 10%)

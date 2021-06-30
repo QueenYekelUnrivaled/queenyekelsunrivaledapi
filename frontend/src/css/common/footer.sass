@@ -1,0 +1,109 @@
+@import "../utils/colors"
+
+footer
+    &.queen-footer
+        .footer-image
+            height: 200px
+
+            @include breakpoint(1367px, false)
+                height: 150px
+
+            img
+                flex-grow: 1
+                height: 100%
+                width: 100%
+                object-fit: cover
+                position: relative
+
+                @include breakpoint(974px, false)
+                    &#image-5,
+                        display: none
+
+                @include breakpoint($breakpoint-tablet, false)
+                    &#image-1,
+                        display: none
+
+                @include breakpoint(582px, false)
+                    &#image-3,
+                        display: none
+
+                @include breakpoint($breakpoint-mobile-device, false)
+                    &#image-2,
+                        display: none
+
+        .__footer-container
+            background-color: $dark
+            color: $white
+            padding: 60px pxToRem(20px)
+
+            @include breakpoint($breakpoint-small-screen-laptop, true)
+                padding: 80px pxToRem(210px)
+
+            @include breakpoint($breakpoint-mini-desktop, false)
+                padding-top: 40px
+                padding-bottom: 40px
+                font-size: pxToRem(10px)
+
+            & > *
+                flex-basis: 30%
+
+            @include breakpoint($breakpoint-tablet-mobile-small, false)
+                flex-wrap: wrap
+
+                & > *
+                    flex-basis: 100%
+
+            .__title,
+            .__sub-title
+                color: $white !important
+
+            .__title
+                font-size: pxToRem(27px)
+
+            .__sub-title
+                font-size: pxToRem(18px)
+                margin-bottom: 10px
+
+            p
+                color: $white !important
+                font-size: pxToRem(15px) !important
+
+            .contact
+                .flex
+                    margin-bottom: 20px
+
+                    @include breakpoint($breakpoint-mini-desktop, true)
+                        margin-bottom: 10px
+
+                .content
+                    margin-left: 20px
+
+                    p
+                        margin-bottom: 0 !important
+                        line-height: 1.3 !important
+                        font-size: 13px !important
+                        font-weight: 600 !important
+
+            .quick-links
+                .links
+                    flex-direction: column
+                    a
+                        display: inline-block
+                        color: $white
+                        padding: 5px
+                        margin-bottom: 1px
+                        font-size: 14px
+                        border-radius: 3px
+
+                        &:hover
+                            color: $light-red
+
+        .copy-right
+            text-align: center
+            padding-top: 20px
+            padding-bottom: 20px
+            background-color: darken($dark, 5%)
+
+            p
+                margin: 0 !important
+                color: $white !important
